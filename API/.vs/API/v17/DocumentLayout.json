@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\acruz\\Proyectos\\Spiderman\\API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{59095A9A-697B-4314-8B54-DC453FFD7A0D}|API.csproj|c:\\users\\acruz\\proyectos\\spiderman\\api\\controllers\\herocrimecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59095A9A-697B-4314-8B54-DC453FFD7A0D}|API.csproj|solutionrelative:controllers\\herocrimecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\viewmodels\\crimeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\herocrimemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\viewmodels\\herocrimeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59095A9A-697B-4314-8B54-DC453FFD7A0D}|API.csproj|c:\\users\\acruz\\proyectos\\spiderman\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59095A9A-697B-4314-8B54-DC453FFD7A0D}|API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HeroCrimeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\HeroCrimeViewModel.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\ViewModels\\HeroCrimeViewModel.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\HeroCrimeViewModel.cs",
+              "RelativeToolTip": "..\\LIB\\ViewModels\\HeroCrimeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:50:52.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HeroCrimeManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\HeroCrimeManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\HeroCrimeManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\HeroCrimeManager.cs",
+              "RelativeToolTip": "..\\LIB\\Managers\\HeroCrimeManager.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAywBoAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:47:53.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HeroCrimeController.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\API\\Controllers\\HeroCrimeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HeroCrimeController.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\API\\Controllers\\HeroCrimeController.cs",
+              "RelativeToolTip": "Controllers\\HeroCrimeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:46:09.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\UserManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
+              "RelativeToolTip": "..\\LIB\\Managers\\UserManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:28:09.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\ViewModels\\UserViewModel.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\UserViewModel.cs",
+              "RelativeToolTip": "..\\LIB\\ViewModels\\UserViewModel.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAywBYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T00:28:01.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CrimeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\CrimeViewModel.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\ViewModels\\CrimeViewModel.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\CrimeViewModel.cs",
+              "RelativeToolTip": "..\\LIB\\ViewModels\\CrimeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T17:26:27.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T16:42:04.68Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

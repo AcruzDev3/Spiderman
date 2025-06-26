@@ -1,0 +1,15 @@
+C:\Users\acruz\Proyectos\Spiderman\LIB\bin\Debug\net9.0\LIB.deps.json
+C:\Users\acruz\Proyectos\Spiderman\LIB\bin\Debug\net9.0\LIB.runtimeconfig.json
+C:\Users\acruz\Proyectos\Spiderman\LIB\bin\Debug\net9.0\LIB.dll
+C:\Users\acruz\Proyectos\Spiderman\LIB\bin\Debug\net9.0\LIB.pdb
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.csproj.AssemblyReference.cache
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.AssemblyInfoInputs.cache
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.AssemblyInfo.cs
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.csproj.CoreCompileInputs.cache
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.sourcelink.json
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.dll
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\refint\LIB.dll
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.pdb
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\LIB.genruntimeconfig.cache
+C:\Users\acruz\Proyectos\Spiderman\LIB\obj\Debug\net9.0\ref\LIB.dll
