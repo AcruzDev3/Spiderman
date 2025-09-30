@@ -26,7 +26,7 @@ namespace LIB.ViewModels
         public static CrimeViewModel CreateViewModel(Crime model, AddressViewModel addressViewModel)
         {
             if(Enum.TryParse<CrimeType>(model.Grade, out CrimeType validType) && Enum.TryParse<GradeType>(model.Grade, out GradeType validGrade))
-            {
+           { 
                 return new CrimeViewModel
                 {
                     Id = model.Id,

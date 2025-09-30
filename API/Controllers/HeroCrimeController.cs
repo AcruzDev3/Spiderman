@@ -14,7 +14,7 @@ namespace API.Controllers
             _heroCrimeManager = heroCrimeManager;
         }
 
-        [HttpGet, Route("HeroCrimes")]
+        [HttpGet, Route("GetAll")]
         public async Task<IActionResult> Index()
         {
             List<HeroCrimeViewModel> viewModels = await _heroCrimeManager.Get();

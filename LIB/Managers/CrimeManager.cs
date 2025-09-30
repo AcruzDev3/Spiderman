@@ -19,10 +19,11 @@ namespace LIB.Managers
         public async Task<List<CrimeViewModel>> Get()
         {
             List<CrimeViewModel> viewModels = new List<CrimeViewModel>();
-            List<Crime> models =  await _context.Crimes.ToListAsync();
+            List<Crime> models =  await _context.Crimes.AsNoTracking().ToListAsync();
             foreach (Crime model in models)
             {
                 AddressViewModel addressViewModel =  await _addressManager.GetOne(model.IdAddress);
+                if (addressViewModel == null) continue;
                 viewModels.Add(CrimeViewModel.CreateViewModel(model, addressViewModel));
             }
             return viewModels; 
@@ -30,7 +31,7 @@ namespace LIB.Managers
         public async Task<CrimeViewModel> GetOne(int id)
         {
             if (id <= 0) return null;
-            Crime model = await _context.Crimes.FirstOrDefaultAsync(c => c.Id == id);
+            Crime model = await _context.Crimes.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
             AddressViewModel addressViewModel = await _addressManager.GetOne(id);
             if(addressViewModel != null)
             {
@@ -42,7 +43,7 @@ namespace LIB.Managers
         private async Task<Crime> GetModel(int id)
         {
             if (id <= 0) return null;
-            return await _context.Crimes.FirstOrDefaultAsync(c => c.Id == id);
+            return await _context.Crimes.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
         }
         public async Task<int> Create(CrimeViewModel viewModel)
         {

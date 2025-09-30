@@ -12,7 +12,7 @@ namespace API.Controllers
         {
             _crimeManager = crimeManager;
         }
-        [HttpGet, Route("/Crimes")]
+        [HttpGet, Route("GetAll")]
         public async Task<IActionResult> Index()
         {
             return Ok(await _crimeManager.Get());

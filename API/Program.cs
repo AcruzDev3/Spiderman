@@ -14,6 +14,7 @@ builder.Services.AddDbContext<SpidermanContext>(options =>
 
 builder.Services.AddScoped<CrimeManager>();
 builder.Services.AddScoped<AddressManager>();
+builder.Services.AddScoped<UserManager>();
 builder.Services.AddScoped<HeroCrimeManager>();
 
 var app = builder.Build();
