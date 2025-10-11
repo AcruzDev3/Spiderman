@@ -5,8 +5,8 @@ CREATE TABLE [role] (
 	name NVARCHAR(100) NOT NULL UNIQUE  
 );
 
-CREATE TABLE danger_level (
-	danger_level_id INT PRIMARY KEY IDENTITY(1,1),
+CREATE TABLE criminal_risk_level (
+	criminal_risk_level_id INT PRIMARY KEY IDENTITY(1,1),
 	[name] NVARCHAR(20) NOT NULL UNIQUE
 );
 
@@ -36,20 +36,21 @@ CREATE TABLE criminal (
 	risk_id INT NOT NULL,
 	[image] NVARCHAR(255),
 	criminal_since DATETIME NOT NULL,
-	FOREIGN KEY (risk_id) REFERENCES danger_level(danger_level_id)
+	FOREIGN KEY (risk_id) REFERENCES criminal_risk_level(criminal_risk_level_id)
 );
 
 CREATE TABLE crime(
 	crime_id INT PRIMARY KEY IDENTITY(1,1),
 	address_id INT NOT NULL,
-	grade INT NOT NULL,
-	[type] INT NOT NULL,
+	grade_id INT NOT NULL,
+	type_id INT NOT NULL,
 	[description] TEXT,
 	date_start DATETIME NOT NULL,
 	date_end DATETIME,
 	status BIT NOT NULL,
-	FOREIGN KEY (grade) REFERENCES crime_grade(crime_grade_id),
-	FOREIGN KEY (type) REFERENCES crime_type(crime_type_id)
+	FOREIGN KEY (grade_id) REFERENCES crime_grade(crime_grade_id),
+	FOREIGN KEY (type_id) REFERENCES crime_type(crime_type_id),
+	FOREIGN KEY (address_id) REFERENCES [address](address_id)
 );
 
 CREATE TABLE [user] (
@@ -60,4 +61,20 @@ CREATE TABLE [user] (
 	role_id INT NOT NULL,
 	image NVARCHAR(300),
 	FOREIGN KEY (role_id) REFERENCES [role](role_id)
+);
+
+CREATE TABLE crime_heros (
+	crime_id INT NOT NULL, 
+	hero_id INT NOT NULL,
+	PRIMARY KEY (crime_id, hero_id),
+	FOREIGN KEY (crime_id) REFERENCES crime(crime_id),
+	FOREIGN KEY (hero_id) REFERENCES [user](user_id)
+);
+
+CREATE TABLE crime_criminals (
+	crime_id INT NOT NULL,
+	criminal_id INT NOT NULL,
+	PRIMARY KEY (crime_id, criminal_id),
+	FOREIGN KEY (crime_id) REFERENCES crime(crime_id),
+	FOREIGN KEY (criminal_id) REFERENCES criminal(criminal_id)
 );

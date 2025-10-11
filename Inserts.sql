@@ -3,12 +3,12 @@ use Spiderman;
 INSERT INTO [role] ([name]) VALUES('HERO');
 INSERT INTO [role] ([name]) VALUES('NEIGHBOR');
 
-INSERT INTO danger_level ([name]) VALUES ('LOW');
-INSERT INTO danger_level ([name]) VALUES ('MODERATE');
-INSERT INTO danger_level ([name]) VALUES ('HIGH');
-INSERT INTO danger_level ([name]) VALUES ('CRITICAL');
-INSERT INTO danger_level ([name]) VALUES ('EXTREME');
-INSERT INTO danger_level ([name]) VALUES ('UNKNOWN');
+INSERT INTO criminal_risk_level ([name]) VALUES ('LOW');
+INSERT INTO criminal_risk_level ([name]) VALUES ('MODERATE');
+INSERT INTO criminal_risk_level ([name]) VALUES ('HIGH');
+INSERT INTO criminal_risk_level ([name]) VALUES ('CRITICAL');
+INSERT INTO criminal_risk_level ([name]) VALUES ('EXTREME');
+INSERT INTO criminal_risk_level ([name]) VALUES ('UNKNOWN');
 
 INSERT INTO crime_grade ([name]) VALUES('MINOR');
 INSERT INTO crime_grade ([name]) VALUES('MODERATE');
