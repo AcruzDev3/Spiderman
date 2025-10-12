@@ -1,10 +1,11 @@
-﻿using LIB.DAL;
+﻿using LIB.Models;
 using LIB.Enums;
+using LIB.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
 namespace LIB.ViewModels
 {
-    public class AddressViewModel
+    public class AddressViewModel : IViewModel<Address>
     {
         public int Id { get; set; }
 
@@ -19,21 +20,16 @@ namespace LIB.ViewModels
 
         [Required, StringLength(150)]
         public string Street { get; set; }
-        
-        public static AddressViewModel CreateViewModel(Address model)
+
+        public void Create(Address model)
         {
-            if(Enum.TryParse<SideType>(model.Side, out SideType validSide))
-            {
-                return new AddressViewModel
-                {
-                    Id = model.Id,
-                    ZipCode = model.ZipCode,
-                    Number = model.Number,
-                    Street = model.Street,
-                    Side = validSide
-                };
-            }
-            return null;
+            if (Enum.TryParse<SideType>(model.Side, out SideType validSide)) throw new Exception("El side no es válido");
+
+            this.Id = model.AddressId;
+            this.ZipCode = model.ZipCode;
+            this.Number = model.Number;
+            this.Street = model.Street;
+            this.Side = validSide;
         }
     }
 

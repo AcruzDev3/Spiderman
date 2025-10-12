@@ -1,4 +1,4 @@
-using LIB.DAL;
+using LIB.Models;
 using LIB.Managers;
 using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +15,8 @@ builder.Services.AddDbContext<SpidermanContext>(options =>
 builder.Services.AddScoped<CrimeManager>();
 builder.Services.AddScoped<AddressManager>();
 builder.Services.AddScoped<UserManager>();
-builder.Services.AddScoped<HeroCrimeManager>();
+builder.Services.AddScoped<CriminalManager>();
+
 
 var app = builder.Build();
 

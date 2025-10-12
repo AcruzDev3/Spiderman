@@ -1,45 +1,44 @@
-﻿using Azure.Core;
-using LIB.DAL;
+﻿using LIB.Interfaces;
+using LIB.Models;
 using LIB.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace LIB.ViewModels
 {
-    public class CrimeViewModel
+    public class CrimeViewModel : IViewModel<Crime>
     {
         public int Id { get; set; }
         public AddressViewModel Address { get; set; }
 
-        [EnumDataType(typeof(GradeType), ErrorMessage = "The grade of Crime is not valid")]
-        public GradeType Grade { get; set; }
+        [Required]
+        public string Grade { get; set; }
 
-        [EnumDataType(typeof(CrimeType), ErrorMessage = "The type of Crime is not valid")]
-        public CrimeType Type { get; set; }
+        [Required]
+        public string Type { get; set; }
         public string? Description { get; set; }
 
+        [Required]
         public DateTime Start { get; set; }
+
         public DateTime? End { get; set; }
-        
+
+        [Required]
         public bool Status { get; set; }
 
-        
-        public static CrimeViewModel CreateViewModel(Crime model, AddressViewModel addressViewModel)
+
+        public void Create(Crime model)
         {
-            if(Enum.TryParse<CrimeType>(model.Grade, out CrimeType validType) && Enum.TryParse<GradeType>(model.Grade, out GradeType validGrade))
-           { 
-                return new CrimeViewModel
-                {
-                    Id = model.Id,
-                    Address = addressViewModel,
-                    Grade = validGrade,
-                    Type = validType,
-                    Description = model.Description,
-                    Start = model.Start,
-                    Status = model.Status,
-                    End = model.End
-                };
-            }
-            return null;
+            // Assess the level and category of the crime
+            this.Id = model.CrimeId;
+
+            //this.Address = model.Ad
+            this.Grade = model.Grade.Name;
+            this.Type = model.Type.Name;
+            this.Description = model.Description;
+            this.Start = model.DateStart;
+            this.Status = model.Status;
+            this.End = model?.DateEnd;
+
         }
     }
 }
