@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .hover-text-header {
+        @apply text-smoke-gray cursor-pointer bg-clip-text text-xl;
+    }
+    .hover-text-header:hover{
+        @apply transition-all scale-125 duration-200 
+        text-transparent bg-gradient-to-r 
+        ;
+    }
+}
