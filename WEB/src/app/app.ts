@@ -10,5 +10,4 @@ import { Footer } from "./components/footer/footer";
   styleUrl: './app.css'
 })
 export class App {
-  title = signal('Hello, WEB');
 }

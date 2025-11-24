@@ -113,7 +113,7 @@ namespace LIB.Managers
                 Criminal? criminal = await GetModel(id);
                 if (criminal == null) throw new Exception("No se pudo encontrar el criminal");
 
-                int rowsDeleted = await _crimeManager.DeleteAllCrimesAssociatedWithCriminal(id);
+                int rowsDeleted = await _crimeManager.DeleteAllCrimesAssociatedWhithId(id);
                 if (rowsDeleted < 0) throw new Exception("No se pudieron eliminar los crímenes asociados al criminal");
                 
                 _context.Criminals.Remove(criminal);

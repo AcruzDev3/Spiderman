@@ -6,10 +6,13 @@
       "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\criminalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\crimemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\addressmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,34 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 216,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\UserViewModel.cs",
-              "RelativeDocumentMoniker": "..\\LIB\\ViewModels\\UserViewModel.cs",
-              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\UserViewModel.cs",
-              "RelativeToolTip": "..\\LIB\\ViewModels\\UserViewModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACEAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T16:59:30.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserManager.cs",
-              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
-              "RelativeDocumentMoniker": "..\\LIB\\Managers\\UserManager.cs",
-              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
-              "RelativeToolTip": "..\\LIB\\Managers\\UserManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T16:45:03.161Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -54,24 +31,57 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 216,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "UserManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\UserManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs*",
+              "RelativeToolTip": "..\\LIB\\Managers\\UserManager.cs*",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAE4AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T15:57:06.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CrimeManager.cs",
               "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CrimeManager.cs",
               "RelativeDocumentMoniker": "..\\LIB\\Managers\\CrimeManager.cs",
               "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CrimeManager.cs",
               "RelativeToolTip": "..\\LIB\\Managers\\CrimeManager.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAiwHMAAABwAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T15:47:57.374Z",
+              "WhenOpened": "2025-11-24T15:56:34.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddressManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\AddressManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\AddressManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\AddressManager.cs",
+              "RelativeToolTip": "..\\LIB\\Managers\\AddressManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T15:56:27.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CriminalManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CriminalManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\CriminalManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CriminalManager.cs",
+              "RelativeToolTip": "..\\LIB\\Managers\\CriminalManager.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAIAywHMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T15:52:15.624Z",
               "EditorCaption": ""
             }
           ]

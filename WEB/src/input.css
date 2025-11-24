@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 @layer components {
+    .text-header-left {
+            @apply text-smoke-gray cursor-pointer bg-clip-text
+            transition-all duration-200 
+            hover:scale-125 hover:text-transparent hover:bg-gradient-to-r;
+        }
+    .profile-image {
+        @apply rounded-full bg-white cursor-pointer p-0.5 size-16
+        transition-all duration-200
+        hover:scale-110 hover:bg-electric-yellow;
+    }
 
-    .hover-text-header {
-        @apply text-smoke-gray cursor-pointer bg-clip-text text-xl;
-    }
-    .hover-text-header:hover{
-        @apply transition-all scale-125 duration-200 
-        text-transparent bg-gradient-to-r 
-        ;
-    }
 }
