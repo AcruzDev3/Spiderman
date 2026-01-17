@@ -1,0 +1,5 @@
+<div class="text-white flex flex-col gap-4 items-center">
+    @for(warning of warnings; track warning.id){
+        <app-card-warning class="w-6/12" [warning]="warning"></app-card-warning> 
+    }   
+</div>

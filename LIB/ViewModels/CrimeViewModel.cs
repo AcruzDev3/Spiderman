@@ -5,9 +5,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LIB.ViewModels
 {
-    public class CrimeViewModel : IViewModel<Crime>
+    public class CrimeViewModel
     {
         public int Id { get; set; }
+        [Required]
         public AddressViewModel Address { get; set; }
 
         [Required]
@@ -15,7 +16,9 @@ namespace LIB.ViewModels
 
         [Required]
         public string Type { get; set; }
-        public string? Description { get; set; }
+
+        [Required]
+        public string Description { get; set; }
 
         [Required]
         public DateTime Start { get; set; }
@@ -25,20 +28,21 @@ namespace LIB.ViewModels
         [Required]
         public bool Status { get; set; }
 
-
-        public void Create(Crime model)
-        {
-            // Assess the level and category of the crime
-            this.Id = model.CrimeId;
-
-            //this.Address = model.Ad
-            this.Grade = model.Grade.Name;
-            this.Type = model.Type.Name;
-            this.Description = model.Description;
-            this.Start = model.DateStart;
-            this.Status = model.Status;
-            this.End = model?.DateEnd;
-
+        public CrimeViewModel(Crime model, AddressViewModel address) {
+            try {
+                if (model == null) throw new Exception("El crimen no puede ser nulo");
+                if (address == null) throw new Exception("La dirección no puede ser nula");
+                this.Id = model.CrimeId;
+                this.Address = address;
+                this.Grade = model.Grade.Name;
+                this.Type = model.Type.Name;
+                this.Description = model.Description ?? string.Empty;
+                this.Start = model.DateStart;
+                this.Status = model.Status;
+                this.End = model?.DateEnd;
+            } catch(Exception) {
+                throw;
+            }
         }
     }
 }

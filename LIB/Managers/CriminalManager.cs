@@ -20,15 +20,14 @@ namespace LIB.Managers
             _context = context;
             _crimeManager = crimeManager;
         }
-        public async Task<CriminalViewModel> GetOne(int id)
+        public async Task<CriminalViewModel> GetById(int id)
         {
             CriminalViewModel? viewModel = null;
             try
             {
                 Criminal? model = await GetModel(id);
                 if (model == null) throw new Exception("No se pudo encontrar el criminal");
-                viewModel = new CriminalViewModel();
-                viewModel.Create(model);
+                viewModel = new CriminalViewModel(model);
             }
             catch (Exception)
             {
@@ -46,8 +45,7 @@ namespace LIB.Managers
                 if (models == null) throw new Exception("No se han podido obtener los criminales");
                 foreach (Criminal model in models)
                 {
-                    CriminalViewModel viewModel = new CriminalViewModel();
-                    viewModel.Create(model);
+                    CriminalViewModel viewModel = new CriminalViewModel(model);
                     viewModels.Add(viewModel);
                 }
             }

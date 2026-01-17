@@ -1,0 +1,22 @@
+<div class="bg-white/10 p-2 rounded-lg text-white justify-center">
+    <div class="flex items-center justify-center">
+        <h3 class="text-xl font-bold text-spider-red">{{ warning.title}}</h3>
+    </div>
+    <div>
+        <div class="flex justify-between items-center gap-1">
+            <section>
+                <p>Heroe: {{ warning.nameHeroe}}</p>
+            </section>
+            <section>
+                <p>Criminal: {{ warning.nameCriminnal}}</p>
+            </section>
+        </div>
+        <p>Parte: {{warning.location.side}}</p>
+    </div>
+    <div class="w-100 flex justify-end">
+        <p>Fecha: 
+            {{ warning.date.getDate()}}/{{ warning.date.getMonth() + 1}}/{{ warning.date.getFullYear()}}
+            {{ warning.date.getHours()}}:{{ warning.date.getMinutes()}}
+        </p>
+    </div>
+</div>

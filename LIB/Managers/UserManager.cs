@@ -15,31 +15,34 @@ namespace LIB.Managers
             _crimeManager = crimeManager;
         }
 
-        public async Task<UserViewModel> GetOne(int id)
+        public async Task<UserViewModel> GetById(int id)
         {
-            UserViewModel viewModel = new UserViewModel();
-            User? model = await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
-            if (model != null) viewModel.Create(model);
+            UserViewModel? viewModel = null;
+            try {
+                if (id < 0) throw new Exception("El id del usuario no es válido");
 
+                User? model = await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
+                if (model == null) throw new Exception("El usuario no existe");
+
+                viewModel = new UserViewModel(model);
+            } catch(Exception) {
+                throw;
+            }
             return viewModel;
         }
 
         public async Task<List<UserViewModel>> GetAll()
         {
             List<UserViewModel> viewModels = new List<UserViewModel>();
-            try
-            {
+            try {
                 List<User>? models = await GetAllModels();
+                
                 if(models == null) throw new Exception("No se han podido obtener los usuarios");
+                
                 foreach (User model in models)
-                {
-                    UserViewModel viewModel = new UserViewModel();
-                    viewModel.Create(model);
-                    viewModels.Add(viewModel);
-                }
+                    viewModels.Add( new UserViewModel(model));
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 throw;
             }
             return viewModels;
@@ -53,7 +56,7 @@ namespace LIB.Managers
                 int existsUserId = await Exists(viewModel);
                 if (existsUserId > 0) throw new Exception("El usuario ya existe");
 
-                User? model = await CreateModel(viewModel);
+                User? model = new User();
                 if (model == null) throw new Exception("El usuario no es válido");
                 await _context.Users.AddAsync(model);
                 rowAffected = await _context.SaveChangesAsync();
@@ -96,10 +99,11 @@ namespace LIB.Managers
             User? user = null;
             try
             {
-                user = await _context.Users
-                    .FirstOrDefaultAsync(u => u.Name.Equals(viewModel.Name, StringComparison.CurrentCultureIgnoreCase) &&
-                    u.Email.Equals(viewModel.Email, StringComparison.CurrentCultureIgnoreCase) &&
-                    u.Role.Name.Equals(viewModel.Role, StringComparison.CurrentCultureIgnoreCase)
+                user = await _context.Users.AsNoTracking()
+                    .FirstOrDefaultAsync(
+                        u => u.Name.Equals(viewModel.Name, StringComparison.CurrentCultureIgnoreCase) &&
+                        u.Email.Equals(viewModel.Email, StringComparison.CurrentCultureIgnoreCase) &&
+                        u.Role.Name.Equals(viewModel.Role, StringComparison.CurrentCultureIgnoreCase)
                     );
                 if (user == null) return 0;
             }
@@ -108,32 +112,6 @@ namespace LIB.Managers
                 throw;
             }
             return user.UserId;
-        }
-
-        private async Task<User?> CreateModel(UserViewModel viewModel)
-        {
-            if (viewModel == null) return null;
-
-            User? model = null;
-            try
-            {
-                int idRole = await VerifyRoleUser(viewModel.Role);
-                if (idRole == 0) throw new Exception("El rol del usuario no es válido");
-
-                model = new User()
-                {
-                    Name = viewModel.Name,
-                    Email = viewModel.Email,
-                    Image = viewModel.Image,
-                    Password = viewModel.Password,
-                    RoleId = idRole,
-                };
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return model;
         }
 
         private async Task<int> VerifyRoleUser(string roleName)
@@ -153,12 +131,12 @@ namespace LIB.Managers
 
         private async Task<User?> GetModel(int id)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
+            return await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.UserId == id);
         }
 
         private async Task<List<User>?> GetAllModels()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users.AsNoTracking().ToListAsync();
         }
         
     }

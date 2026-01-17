@@ -9,26 +9,23 @@ namespace LIB.Managers
     {
         private readonly SpidermanContext _context;
         private readonly AddressManager _addressManager;
-        private readonly CriminalManager _criminalManager;
-        public CrimeManager(SpidermanContext context, AddressManager addressManager, CriminalManager criminalManager)
+        public CrimeManager(SpidermanContext context, AddressManager addressManager)
         {
             this._context = context;
             this._addressManager = addressManager;
-            this._criminalManager = criminalManager;
         }
 
-        public async Task<CrimeViewModel> GetOne(int id)
+        public async Task<CrimeViewModel> GetById(int id)
         {
             CrimeViewModel? viewModel = null;
-            try
-            {
+            try {
+
                 Crime? model = await GetModel(id);
                 if(model == null) throw new Exception("No se pudo encontrar el crimen");
                 viewModel = new CrimeViewModel();
                 viewModel.Create(model);
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 throw;
             }
             return viewModel;
@@ -109,12 +106,7 @@ namespace LIB.Managers
             int rowsAffected = -1;
             try
             {
-                
-                CriminalViewModel? criminal = await _criminalManager.GetOne(id);
-                if(criminal == null) throw new Exception("El criminal no existe");
-
                 _context.Crimes.RemoveRange(_context.Crimes.Where(c => c.Criminals.Any(cr => cr.CriminalId == id)));
-                rowsAffected = await _context.SaveChangesAsync();
             }
             catch(Exception)
             {

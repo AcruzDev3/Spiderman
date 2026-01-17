@@ -8,7 +8,7 @@ namespace LIB.Interfaces
 {
     internal interface IManager<T>
     {
-        Task<T> GetOne(int id);
+        Task<T> GetById(int id);
 
         Task<List<T>> GetAll();
 

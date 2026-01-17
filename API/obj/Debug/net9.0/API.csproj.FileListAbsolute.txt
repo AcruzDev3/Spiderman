@@ -156,6 +156,7 @@ C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\staticwebassets.build.js
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\swae.build.ex.cache
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\API.csproj.Up2Date
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\API.dll
@@ -163,4 +164,3 @@ C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\refint\API.dll
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\API.pdb
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\API.genruntimeconfig.cache
 C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\ref\API.dll
-C:\Users\acruz\Proyectos\Spiderman\API\obj\Debug\net9.0\API.MvcApplicationPartsAssemblyInfo.cs

@@ -13,7 +13,7 @@ namespace LIB.Managers
             _context = context;
         }
 
-        public async Task<AddressViewModel> GetOne(int id)
+        public async Task<AddressViewModel> GetById(int id)
         {
             AddressViewModel? addresViewModel = null;
             try

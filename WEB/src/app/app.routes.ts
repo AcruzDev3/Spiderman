@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { CardWarning } from './components/card-warning/card-warning';
+import { WarningsComponent } from './components/warnings/warnings.component';
 
 export const routes: Routes = [
-    {path: '', component: CardWarning},
+    {path: '', component: WarningsComponent},
 ];
