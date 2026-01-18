@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace LIB.Interfaces
 {
-    internal interface IManager<T>
+    internal interface IManager<ViewModel, DTO, Model>
     {
-        Task<T> GetById(int id);
+        Task<ViewModel> GetById(int id);
 
-        Task<List<T>> GetAll();
+        Task<List<ViewModel>> GetAll();
 
-        Task<int> Create(T viewModel);
+        Task Create(DTO dto);
 
-        Task<int> Delete(int id);
+        Task Delete(int id);
 
-        Task<int> Exists(T viewModel);
+        Task<Model?> Exists(ViewModel viewModel);
     }
 }

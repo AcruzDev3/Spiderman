@@ -4,10 +4,11 @@ using LIB.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers {
+namespace API.Controllers 
+{
     [ApiController, Route("api/[controller]")]
-    public class CriminalsController : ControllerBase {
-
+    public class CriminalsController : ControllerBase 
+    {
         private readonly CriminalManager _criminalManager;
         public CriminalsController(CriminalManager criminalManager) {
             this._criminalManager = criminalManager;
@@ -17,7 +18,7 @@ namespace API.Controllers {
         public async Task<IActionResult> GetById(int id) {
             CriminalViewModel? criminal = null;
             try {
-                criminal = await _criminalManager.GetOne(id);
+                criminal = await _criminalManager.GetById(id);
                 if (criminal == null) throw new Exception("El criminal no existe");
             } catch(Exception ex) {
                 return BadRequest(ex.Message);
@@ -26,12 +27,12 @@ namespace API.Controllers {
         }
 
         [HttpPost("Create")]
-        public async Task<IActionResult> Create([FromBody] CreateCriminalRequest criminal) {
+        public async Task<IActionResult> Create([FromBody] CreateCriminalRequest dto) {
             try {
-
+                await _criminalManager.Create(dto);
             } catch(Exception ex) {
                 return BadRequest(ex.Message);
-            }
+            }   
             return Ok("El usuario se ha creado con exito");
         }
     }

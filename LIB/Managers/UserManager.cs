@@ -1,11 +1,13 @@
-﻿using LIB.Interfaces;
+﻿using API.DTOs;
+using LIB.DTOs;
+using LIB.Interfaces;
 using LIB.Models;
 using LIB.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace LIB.Managers
 {
-    public class UserManager : IManager<UserViewModel>
+    public class UserManager : IManager<UserViewModel, CreateUserRequest, User>
     {
         private readonly SpidermanContext _context;
         private readonly CrimeManager _crimeManager;
@@ -39,8 +41,7 @@ namespace LIB.Managers
                 
                 if(models == null) throw new Exception("No se han podido obtener los usuarios");
                 
-                foreach (User model in models)
-                    viewModels.Add( new UserViewModel(model));
+                foreach (User model in models) viewModels.Add(new UserViewModel(model));
             }
             catch (Exception) {
                 throw;
@@ -48,30 +49,35 @@ namespace LIB.Managers
             return viewModels;
         }
 
-        public async Task<int> Create(UserViewModel viewModel)
+        public async Task Create(CreateUserRequest dto)
         {
-            int rowAffected = 0;
             try
             {
-                int existsUserId = await Exists(viewModel);
-                if (existsUserId > 0) throw new Exception("El usuario ya existe");
+                Role? role = await VerifyRoleUser(dto.Role);
+                
+                if (role == null) throw new Exception("El rol del usuario no existe");
 
-                User? model = new User();
+                UserViewModel viewModel = new UserViewModel(dto);
+
+                if(await Exists(new UserViewModel(dto)) == null) throw new Exception("El usuario ya existe");
+
+
+                User? model = await CreateModel(viewModel, role, dto.Password);
                 if (model == null) throw new Exception("El usuario no es válido");
+               
                 await _context.Users.AddAsync(model);
-                rowAffected = await _context.SaveChangesAsync();
+                
+                int rowAffected = await _context.SaveChangesAsync();
                 if (rowAffected != 1) throw new Exception("No se pudo crear el usuario");
             }
             catch (Exception)
             {
                 throw;
             }
-            return rowAffected;
         }
 
-        public async Task<int> Delete(int id)
+        public async Task Delete(int id)
         {
-            int rowsAffected = 0;
             try
             {
                 if(id < 1) throw new Exception("El usuario no es válido");
@@ -83,50 +89,62 @@ namespace LIB.Managers
                 if(rowsAffectedDeletedCrimes == -1) throw new Exception("No se pudieron eliminar los crímenes asociados al usuario");
 
                 _context.Users.Remove(model);
-                rowsAffected = await _context.SaveChangesAsync();
+                int rowsAffected = await _context.SaveChangesAsync();
                 if (rowsAffected != 1) throw new Exception("No se pudo eliminar el usuario");
             }
             catch (Exception)
             {
                 throw;
             }
-            return rowsAffected;
         }
 
-        public async Task<int> Exists(UserViewModel viewModel)
+        public async Task<User?> Exists(UserViewModel viewModel)
         {
-            if(viewModel == null) return 0;
-            User? user = null;
             try
             {
-                user = await _context.Users.AsNoTracking()
+                if (viewModel == null) throw new Exception("La vista modelo del usuario es nula")
+                        ;
+                return await _context.Users.AsNoTracking()
                     .FirstOrDefaultAsync(
                         u => u.Name.Equals(viewModel.Name, StringComparison.CurrentCultureIgnoreCase) &&
                         u.Email.Equals(viewModel.Email, StringComparison.CurrentCultureIgnoreCase) &&
                         u.Role.Name.Equals(viewModel.Role, StringComparison.CurrentCultureIgnoreCase)
                     );
-                if (user == null) return 0;
             }
             catch (Exception)
             {
                 throw;
             }
-            return user.UserId;
         }
 
-        private async Task<int> VerifyRoleUser(string roleName)
-        {
-            Role? role = null;
-            try
-            {
-                role = await _context.Roles.FirstOrDefaultAsync(r => r.Name == roleName);
-                if (role == null) return 0;
-            }
-            catch (Exception)
-            {
+        private async Task<User?> CreateModel(UserViewModel viewModel, Role role, string password) {
+            User? user = null;
+            try {
+                if (viewModel == null) throw new Exception("El modelo vista no es válido");
+                if (role == null) throw new Exception("El rol del usuario no es válido");
+
+                user = new User {
+                    Name = viewModel.Name,
+                    Email = viewModel.Email,
+                    RoleId = role.RoleId,
+                    Image = viewModel.Image,
+                    Password = password, // Aqui abría que hasear la contraseña
+                };
+            } catch (Exception) {
                 throw;
             }
-            return role.RoleId;
+            return user;
+        }
+
+        private async Task<Role?> VerifyRoleUser(string roleName)
+        {
+            try {
+                return await _context.Roles.FirstOrDefaultAsync(
+                    r => r.Name.Equals(roleName, StringComparison.CurrentCultureIgnoreCase)
+                );
+            } catch (Exception) {
+                throw;
+            }
         }
 
         private async Task<User?> GetModel(int id)

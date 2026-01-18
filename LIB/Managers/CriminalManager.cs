@@ -1,17 +1,12 @@
-﻿using LIB.Interfaces;
+﻿using API.DTOs;
+using LIB.Interfaces;
 using LIB.Models;
 using LIB.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LIB.Managers
 {
-    public class CriminalManager : IManager<CriminalViewModel>
+    public class CriminalManager : IManager<CriminalViewModel, CreateCriminalRequest, Criminal>
     {
         private readonly SpidermanContext _context;
         private readonly CrimeManager _crimeManager;
@@ -55,55 +50,34 @@ namespace LIB.Managers
             }
             return viewModels;
         }
-        public async Task<int> Create(CriminalViewModel viewModel)
+
+        public async Task Create(CreateCriminalRequest dto)
         {
-            int rowsAffected = 0;
             try
             {
-                int existingCriminalId = await Exists(viewModel);
-                if(existingCriminalId > 0) throw new Exception("El criminal ya existe");
+                CriminalRiskLevel? riskLevel = await VerifyRiskCriminal(dto.Risk);
+                if (riskLevel == null) throw new Exception("El nivel de riesgo no es válido");
 
-                Criminal? model = await CreateModel(viewModel);
+                CriminalViewModel viewModel = new CriminalViewModel(dto, riskLevel);
+                if(await Exists(viewModel) == null) throw new Exception("El criminal ya existe");
+
+                Criminal? model = await CreateModel(viewModel, riskLevel);
+
                 if(model == null) throw new Exception("No se pudo crear el criminal");
+
                 await _context.Criminals.AddAsync(model);
-                rowsAffected = await _context.SaveChangesAsync();
+                int rowsAffected = await _context.SaveChangesAsync();
+
                 if(rowsAffected != 1) throw new Exception("No se pudo crear el criminal");
             }
             catch (Exception)
             {
                 throw;
             }
-            return rowsAffected;
         }
 
-        private async Task<Criminal?> CreateModel(CriminalViewModel viewModel)
+        public async Task Delete(int id)
         {
-            Criminal? criminal = null;
-            if (viewModel == null) return null;
-            try
-            {
-                int idRisk = await VerifyRiskCriminal(viewModel.Risk);
-
-                criminal = new Criminal
-                {
-                    Name = viewModel.Name,
-                    Description = viewModel.Description,
-                    RiskId = idRisk,
-                    Image = viewModel.Image,
-                    CriminalSince = viewModel.CriminalSince,
-                };
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return criminal;
-        }
-
-        
-        public async Task<int> Delete(int id)
-        {
-            int rowsAffected = 0;
             try
             {
                 if (id < 1) throw new Exception("El id del criminal no es válido");
@@ -115,60 +89,71 @@ namespace LIB.Managers
                 if (rowsDeleted < 0) throw new Exception("No se pudieron eliminar los crímenes asociados al criminal");
                 
                 _context.Criminals.Remove(criminal);
-                rowsAffected = await _context.SaveChangesAsync();
+                int rowsAffected = await _context.SaveChangesAsync();
+
                 if (rowsAffected != 1) throw new Exception("No se pudo eliminar el criminal");
-
-
             }
             catch (Exception)
             {
                 throw;
             }
-            return rowsAffected;
         }
 
-        public async Task<int> Exists(CriminalViewModel viewModel)
+        public async Task<Criminal?> Exists(CriminalViewModel viewModel)
         {
-            Criminal? model = null;
-            if (viewModel == null) return 0;
+            if (viewModel == null) throw new Exception("El modelo de vista del criminal es nulo");
             try
             {
-                model = await _context.Criminals
+                return await _context.Criminals
                     .FirstOrDefaultAsync(m => m.Name.Equals(viewModel.Name, StringComparison.CurrentCultureIgnoreCase) &&
                         m.Risk.Name.Equals(viewModel.Risk, StringComparison.CurrentCultureIgnoreCase) &&
-                        m.CriminalSince == viewModel.CriminalSince
-                        );
-                if (model == null) return 0;
+                        m.CriminalSince == viewModel.Since
+                    );
             }
             catch (Exception)
             {
                 throw;
             }
-            return model.CriminalId;
         }
 
-        private async Task<int> VerifyRiskCriminal(string riskName)
+        private async Task<CriminalRiskLevel?> VerifyRiskCriminal(string riskName)
         {
-            CriminalRiskLevel? risk = null;
             try
             {
-                risk = await _context.CriminalRiskLevels.FirstOrDefaultAsync(m => m.Name.Equals(riskName, StringComparison.CurrentCultureIgnoreCase));
-                if (risk == null) throw new Exception("El nivel de riesgo no es válido");
+                return await _context.CriminalRiskLevels.FirstOrDefaultAsync(
+                    m => m.Name.Equals(riskName, StringComparison.CurrentCultureIgnoreCase)
+                );
             }
             catch (Exception)
             {
                 throw;
             }
-            return risk.CriminalRiskLevelId;
         }
 
-        private async Task<Criminal?> GetModel(int id)
-        {
+        private async Task<Criminal> CreateModel(CriminalViewModel viewModel, CriminalRiskLevel risk) {
+            Criminal? criminal = null;
+            try {
+                if (viewModel == null) throw new Exception("El modelo de vista del criminal es nulo");
+                if(risk == null) throw new Exception("El nivel de riesgo del criminal es nulo");
+
+                criminal = new Criminal {
+                    Name = viewModel.Name,
+                    Description = viewModel.Description,
+                    RiskId = risk.CriminalRiskLevelId,
+                    Image = viewModel.Image,
+                    CriminalSince = viewModel.Since,
+                };
+            } catch (Exception) {
+                throw;
+            }
+            return criminal;
+        }
+
+        private async Task<Criminal?> GetModel(int id) {
             return await _context.Criminals.FirstOrDefaultAsync(m => m.CriminalId == id);
         }
 
-        private async Task<List<Criminal>?> GetAllModels()
-        {
+        private async Task<List<Criminal>?> GetAllModels() {
             return await _context.Criminals.ToListAsync();
         }
     }

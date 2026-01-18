@@ -33,6 +33,7 @@ namespace LIB.ViewModels
         public CrimeViewModel(Crime model) {
             try {
                 if (model == null) throw new Exception("El crimen no puede ser nulo");
+
                 this.Id = model.CrimeId;
                 this.Address = new AddressViewModel(model.Address);
                 this.Grade = model.Grade.Name;

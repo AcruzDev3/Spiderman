@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LIB.Interfaces;
+﻿using System.ComponentModel.DataAnnotations;
+using API.DTOs;
 using LIB.Models;
 
 namespace LIB.ViewModels
@@ -32,6 +27,10 @@ namespace LIB.ViewModels
         [DataType(DataType.DateTime, ErrorMessage = "El formato de la fecha no es válido")]
         public DateTime Since { get; set; }
 
+        /// <summary>
+        /// Constructor que mapea un modelo Criminal a un CriminalViewModel
+        /// </summary>
+        /// <param name="model">Criminal, modelo de la base de datos</param>
         public CriminalViewModel(Criminal model) {
             try {
                 if (model == null) throw new Exception("El modelo no puede ser nulo");
@@ -48,6 +47,18 @@ namespace LIB.ViewModels
             } catch(Exception) {
                 throw;
             }
+        }
+        /// <summary>
+        /// Constructor que mapea un CreateCriminalRequest a un CriminalViewModel
+        /// Recibe un DTO de creación de criminal
+        /// </summary>
+        /// <param name="dto">CreateCriminalRequest</param>
+        public CriminalViewModel(CreateCriminalRequest dto, CriminalRiskLevel risk) {
+            this.Name = dto.Name; 
+            this.Description = dto.Description;
+            this.Risk = risk.Name;
+            this.Image = dto.Image;
+            this.Since = dto.Since;
         }
     }
 }
