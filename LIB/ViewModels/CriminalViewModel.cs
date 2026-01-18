@@ -11,17 +11,25 @@ namespace LIB.ViewModels
 {
     public class CriminalViewModel
     {
-        [Required, Range(0, int.MaxValue)]
+        [Required(ErrorMessage = "El id del criminal es obligatorio")] 
+        [Range(0, int.MaxValue, ErrorMessage = "El id del criminal no es válido")]
         public int Id { get; set; }
-        [Required, StringLength(50)]
+
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [StringLength(50, ErrorMessage = "La longitud del nombre no puede ser mayor a 50 caracteres")]
         public string Name { get; set; }
-        [StringLength(300)]
+        
+        [StringLength(300, ErrorMessage = "La longitud de la descripcion no puede ser mayor a 300 caracteres")]
         public string? Description { get; set; }
-        [Required]
+        
+        [Required(ErrorMessage = "El riesgo es obligatorio")]
         public string Risk { get; set; }
-        [Required, StringLength(255)]
+
+        [StringLength(255, ErrorMessage = "La longitud de la ruta de la imagen no puede ser mayor a 255 caracteres")]
         public string? Image { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "La fecha de nacimiento es obligatoria")]
+        [DataType(DataType.DateTime, ErrorMessage = "El formato de la fecha no es válido")]
         public DateTime Since { get; set; }
 
         public CriminalViewModel(Criminal model) {

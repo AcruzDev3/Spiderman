@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<SpidermanContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DB_SPIDERMAN")));
+//builder.Services.AddDbContext<SpidermanContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DB_SPIDERMAN")));
 
 builder.Services.AddScoped<CrimeManager>();
 builder.Services.AddScoped<AddressManager>();

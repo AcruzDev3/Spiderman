@@ -22,8 +22,7 @@ namespace LIB.Managers
 
                 Crime? model = await GetModel(id);
                 if(model == null) throw new Exception("No se pudo encontrar el crimen");
-                viewModel = new CrimeViewModel();
-                viewModel.Create(model);
+                viewModel = new CrimeViewModel(model);
             }
             catch (Exception) {
                 throw;

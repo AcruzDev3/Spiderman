@@ -1,26 +1,32 @@
 ﻿using LIB.Models;
 using LIB.Enums;
-using LIB.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
 namespace LIB.ViewModels
 {
-    public class AddressViewModel
-    {
-        [Required, Range(1, int.MaxValue)]
+    public class AddressViewModel {
+        [Required(ErrorMessage = "El id de la direccion es obligatorio")]
+        [Range(1, int.MaxValue, ErrorMessage = "El id de la vista de la dirección no es válido")]
         public int Id { get; set; }
 
-        [Required, Range(0, int.MaxValue)]
+        [Required(ErrorMessage = "El número de la dirección es obligatorio")]
+        [Range(0, int.MaxValue, ErrorMessage = "El numero de la dirrecion no es válido")]
         public int Number { get; set; }
 
-        [Required, EnumDataType(typeof(SideType))]
+        [Required(ErrorMessage = "La parte es obligatorio")]
+        [EnumDataType(typeof(SideType), ErrorMessage = "El formato de la parte no es válida")]
         public SideType Side { get; set; }
 
-        [Required, StringLength(5)]
+        [Required(ErrorMessage = "El codigo postal es obligatorio")]
+        [StringLength(5, ErrorMessage = "La longitud del codigo postal no puede ser mayor a 5 caracteres")]
+        [MinLength(5, ErrorMessage = "La longitud del codigo postal no puede ser menor a 5 caracteres")]
         public string ZipCode { get; set; }
 
-        [Required, StringLength(150)]
+        [Required(ErrorMessage = "La calle es obligatoria")]
+        [StringLength(150, ErrorMessage = "La longitud de la calle no puede ser mayor a 150 caracteres")]
         public string Street { get; set; }
+        [StringLength(150, ErrorMessage = "La longitud de la ruta de la imagen no puede ser mayor a 150 caracteres")]
+        public string? Image { get; set; }
 
         public AddressViewModel(Address model) {
             try {
@@ -36,10 +42,6 @@ namespace LIB.ViewModels
             } catch(Exception) {
                 throw;
             }
-        }
-        public void Create(Address model)
-        {
-            
         }
     }
 

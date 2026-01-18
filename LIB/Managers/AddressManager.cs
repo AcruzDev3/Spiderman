@@ -20,7 +20,7 @@ namespace LIB.Managers
             {
                 Address? model = await GetModel(id);
                 if (model == null) throw new Exception("No se pudo encontrar la direccion");
-                addresViewModel!.Create(model);
+                addresViewModel = new AddressViewModel(model);  
             }
             catch(Exception)
             {
@@ -32,16 +32,13 @@ namespace LIB.Managers
         public async Task<List<AddressViewModel>> GetAll()
         {
             List<AddressViewModel> viewModels = new List<AddressViewModel>();
-            try
-            {
+            try {
                 List<Address>? models = await GetAllModels();
+                
                 if (models == null) throw new Exception("No se han podido obtener las direcciones");
-                foreach (Address model in models)
-                {
-                    AddressViewModel viewModel = new AddressViewModel();
-                    viewModel.Create(model);
-                    viewModels.Add(viewModel);
-                }
+                
+                foreach (Address model in models) 
+                    viewModels.Add(new AddressViewModel(model));
             }
             catch (Exception) 
             {
@@ -52,7 +49,6 @@ namespace LIB.Managers
 
         public async Task<int> Create(AddressViewModel viewModel)
         {
-            int rowsAffected = 0;
             int existingAddressId = 0;
             Address? model = null;
 
@@ -62,9 +58,9 @@ namespace LIB.Managers
                 existingAddressId = await Exists(viewModel);
                 if (existingAddressId == 0)
                 {
-                    model = CreateModel(viewModel);
+                    model = new Address(viewModel);
                     await _context.Addresses.AddAsync(model);
-                    rowsAffected = await _context.SaveChangesAsync();
+                    int rowsAffected = await _context.SaveChangesAsync();
                     if (rowsAffected != 1) throw new Exception("No se ha podido crear la direccion");
                 }
             }
@@ -119,20 +115,6 @@ namespace LIB.Managers
         private async Task<List<Address>> GetAllModels()
         {
             return await _context.Addresses.AsNoTracking().ToListAsync();
-        }
-        private Address CreateModel(AddressViewModel viewModel)
-        {
-            if (!Enum.IsDefined(typeof(SideType), viewModel.Side))
-            {
-                throw new Exception("Invalid SideType value.");
-            }
-            return new Address
-            {
-                Street = viewModel.Street,
-                Number = viewModel.Number,
-                ZipCode = viewModel.ZipCode,
-                Side = viewModel.Side.ToString(),
-            };
         }
     }
 }

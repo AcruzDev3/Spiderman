@@ -1,0 +1,14 @@
+Empaquetador: Node.js --> NPM npm
+
+npm = inseguro += lento += instala muchos paquetes
+
+pnpm = seguro += rápido += paquetes necesarios
+
+pnpm ~ start, install -D, add -D, remove
+
+Angular: ng 
+
+ng serve
+
+Ctrl + C = se para el proyecto 
+ 
