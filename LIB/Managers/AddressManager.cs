@@ -11,7 +11,7 @@ namespace LIB.Managers
         private readonly SpidermanContext _context;
         public AddressManager(SpidermanContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         public async Task<AddressViewModel> GetById(int id)
@@ -19,7 +19,7 @@ namespace LIB.Managers
             AddressViewModel? addresViewModel = null;
             try
             {
-                Address? model = await GetModel(id);
+                Address? model = await this.GetModel(id);
                 if (model == null) throw new Exception("No se pudo encontrar la direccion");
                 addresViewModel = new AddressViewModel(model);  
             }
@@ -34,12 +34,11 @@ namespace LIB.Managers
         {
             List<AddressViewModel> viewModels = new List<AddressViewModel>();
             try {
-                List<Address>? models = await GetAllModels();
+                List<Address>? models = await this.GetAllModels();
                 
                 if (models == null) throw new Exception("No se han podido obtener las direcciones");
                 
-                foreach (Address model in models) 
-                    viewModels.Add(new AddressViewModel(model));
+                foreach (Address model in models) viewModels.Add(new AddressViewModel(model));
             }
             catch (Exception) 
             {
@@ -60,8 +59,8 @@ namespace LIB.Managers
                 Address model = new Address(viewModel);
                 if (model == null) throw new Exception("El modelo de la dirección no es válido");
 
-                await _context.Addresses.AddAsync(model);
-                int rowsAffected = await _context.SaveChangesAsync();
+                await this._context.Addresses.AddAsync(model);
+                int rowsAffected = await this._context.SaveChangesAsync();
                 if (rowsAffected != 1) throw new Exception("No se ha podido crear la direccion");
                 
             }
@@ -75,26 +74,24 @@ namespace LIB.Managers
         {
             try
             {
-                Address? model = await GetModel(id);
+                Address? model = await this.GetModel(id);
                 if (model == null) throw new Exception("La direccion no existe");
 
-                _context.Addresses.Remove(model);
-                int rowsAffected = await _context.SaveChangesAsync();
-
-                if (rowsAffected != 1) throw new Exception("No se ha podido eliminar la direccion");
+                this._context.Addresses.Remove(model);
             }
             catch (Exception)
             {
                 throw;
             }
         }
+
         public async Task<Address?> Exists(AddressViewModel viewModel)
         {
             try
             {
                 if (viewModel == null) throw new Exception("El modelo vista de la dirección no es válido");
 
-                 return await _context.Addresses
+                 return await this._context.Addresses
                     .FirstOrDefaultAsync(m => m.Street.Equals(viewModel.Street, StringComparison.CurrentCultureIgnoreCase) &&
                     m.ZipCode.Equals(viewModel.ZipCode, StringComparison.CurrentCultureIgnoreCase) &&
                     m.Side.Equals(viewModel.Side.ToString(), StringComparison.CurrentCultureIgnoreCase) &&
@@ -108,12 +105,12 @@ namespace LIB.Managers
         }
         private async Task<Address?> GetModel(int id)
         {
-            return await _context.Addresses.FirstOrDefaultAsync(a => a.AddressId == id);
+            return await this._context.Addresses.FirstOrDefaultAsync(a => a.AddressId == id);
         }
 
         private async Task<List<Address>> GetAllModels()
         {
-            return await _context.Addresses.AsNoTracking().ToListAsync();
+            return await this._context.Addresses.AsNoTracking().ToListAsync();
         }
     }
 }

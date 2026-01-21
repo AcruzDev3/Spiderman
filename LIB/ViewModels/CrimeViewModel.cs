@@ -2,6 +2,7 @@
 using LIB.Models;
 using LIB.Enums;
 using System.ComponentModel.DataAnnotations;
+using LIB.DTOs;
 
 namespace LIB.ViewModels
 {
@@ -30,6 +31,8 @@ namespace LIB.ViewModels
         [Required(ErrorMessage = "El estado del crimen es obligatorio")]
         public bool Status { get; set; }
 
+        [Required(ErrorMessage = "No puede haber un crimen sin criminales")]
+        List<CriminalViewModel> Criminals = new List<CriminalViewModel>();
         public CrimeViewModel(Crime model) {
             try {
                 if (model == null) throw new Exception("El crimen no puede ser nulo");
@@ -45,6 +48,20 @@ namespace LIB.ViewModels
             } catch(Exception) {
                 throw;
             }
+        }
+
+        public CrimeViewModel(CreateCrimeRequest dto, AddressViewModel address, CrimeGrade grade, CrimeType type, List<CriminalViewModel> criminals) {
+            
+            if(address == null) throw new Exception("La dirección no es válida");
+            if(grade == null) throw new Exception("El grado del crimen no es válido");
+            if(type == null) throw new Exception("El tipo del crimen no es válido");
+            if(criminals == null || criminals.Count == 0) throw new Exception("El crimen debe tener al menos un criminal asociado");
+
+            this.Address = address;
+            this.Grade = grade.Name;
+            this.Type = type.Name;
+            this.Description = dto.Description;
+            this.Criminals = criminals;
         }
     }
 }

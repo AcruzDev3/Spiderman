@@ -6,19 +6,22 @@
       "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\addressmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\viewmodels\\addressviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\crimemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\criminalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\interfaces\\imanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\models\\crime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\dtos\\createaddressrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\interfaces\\imanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,19 +31,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 216,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddressViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\AddressViewModel.cs",
-              "RelativeDocumentMoniker": "..\\LIB\\ViewModels\\AddressViewModel.cs",
-              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\ViewModels\\AddressViewModel.cs",
-              "RelativeToolTip": "..\\LIB\\ViewModels\\AddressViewModel.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAYwCMAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "UserManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\UserManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
+              "RelativeToolTip": "..\\LIB\\Managers\\UserManager.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAuwIoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T20:41:36.611Z",
+              "WhenOpened": "2026-01-21T21:53:21.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddressManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\AddressManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\AddressManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\AddressManager.cs",
+              "RelativeToolTip": "..\\LIB\\Managers\\AddressManager.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAYwA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T21:49:22.136Z",
               "EditorCaption": ""
             },
             {
@@ -53,28 +69,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CreateAddressRequest.cs",
-              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\DTOs\\CreateAddressRequest.cs",
-              "RelativeDocumentMoniker": "..\\LIB\\DTOs\\CreateAddressRequest.cs",
-              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\DTOs\\CreateAddressRequest.cs",
-              "RelativeToolTip": "..\\LIB\\DTOs\\CreateAddressRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CrimeManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CrimeManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\CrimeManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CrimeManager.cs",
+              "RelativeToolTip": "..\\LIB\\Managers\\CrimeManager.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwDsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T20:36:44.453Z",
+              "WhenOpened": "2026-01-21T20:49:09.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddressManager.cs",
-              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\AddressManager.cs",
-              "RelativeDocumentMoniker": "..\\LIB\\Managers\\AddressManager.cs",
-              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\AddressManager.cs",
-              "RelativeToolTip": "..\\LIB\\Managers\\AddressManager.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAiwFsAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CriminalManager.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CriminalManager.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Managers\\CriminalManager.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CriminalManager.cs",
+              "RelativeToolTip": "..\\LIB\\Managers\\CriminalManager.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAywBYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T20:36:02.111Z",
+              "WhenOpened": "2026-01-18T12:22:43.871Z",
               "EditorCaption": ""
             }
           ]
@@ -95,12 +111,12 @@
       },
       "DocumentGroups": [
         {
-          "DockedWidth": 169,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 291,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "IManager.cs",
               "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Interfaces\\IManager.cs",
               "RelativeDocumentMoniker": "..\\LIB\\Interfaces\\IManager.cs",
@@ -113,7 +129,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "Crime.cs",
+              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Models\\Crime.cs",
+              "RelativeDocumentMoniker": "..\\LIB\\Models\\Crime.cs",
+              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Models\\Crime.cs",
+              "RelativeToolTip": "..\\LIB\\Models\\Crime.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAmwCgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T20:50:31.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Address.cs",
               "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Models\\Address.cs",
               "RelativeDocumentMoniker": "..\\LIB\\Models\\Address.cs",
@@ -122,25 +151,6 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-21T20:37:20.43Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 231,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CriminalManager.cs",
-              "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CriminalManager.cs",
-              "RelativeDocumentMoniker": "..\\LIB\\Managers\\CriminalManager.cs",
-              "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CriminalManager.cs",
-              "RelativeToolTip": "..\\LIB\\Managers\\CriminalManager.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T12:22:43.871Z",
               "EditorCaption": ""
             }
           ]
