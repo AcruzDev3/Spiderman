@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LIB.ViewModels;
 
 namespace LIB.Models;
 
@@ -20,4 +21,13 @@ public partial class Criminal
     public virtual CriminalRiskLevel Risk { get; set; } = null!;
 
     public virtual ICollection<Crime> Crimes { get; set; } = new List<Crime>();
+
+    public Criminal(CriminalViewModel viewModel, CriminalRiskLevel risk) { 
+        this.Name = viewModel.Name;
+        this.Description = viewModel.Description;
+        this.RiskId = risk.CriminalRiskLevelId;
+        this.RiskId = risk.CriminalRiskLevelId;
+        this.Image = viewModel.Image;
+        this.CriminalSince = viewModel.Since;
+    }
 }

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\acruz\\Proyectos\\Spiderman\\API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{59095A9A-697B-4314-8B54-DC453FFD7A0D}|API.csproj|c:\\users\\acruz\\proyectos\\spiderman\\api\\controllers\\criminalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59095A9A-697B-4314-8B54-DC453FFD7A0D}|API.csproj|solutionrelative:controllers\\criminalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\usermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -10,10 +14,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\managers\\criminalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59095A9A-697B-4314-8B54-DC453FFD7A0D}|API.csproj|c:\\users\\acruz\\proyectos\\spiderman\\api\\controllers\\criminalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59095A9A-697B-4314-8B54-DC453FFD7A0D}|API.csproj|solutionrelative:controllers\\criminalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CE1CB81-824E-430C-AEC8-4A3641AB491E}|..\\LIB\\LIB.csproj|c:\\users\\acruz\\proyectos\\spiderman\\lib\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -41,8 +41,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 216,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
@@ -53,8 +61,7 @@
               "RelativeToolTip": "..\\LIB\\ViewModels\\UserViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T13:35:55.23Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T13:35:55.23Z"
             },
             {
               "$type": "Document",
@@ -66,8 +73,7 @@
               "RelativeToolTip": "..\\LIB\\DTOs\\LogInRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T13:29:01.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T13:29:01.325Z"
             },
             {
               "$type": "Document",
@@ -79,8 +85,7 @@
               "RelativeToolTip": "..\\LIB\\DTOs\\CreateCriminalRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T13:28:55.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T13:28:55.678Z"
             },
             {
               "$type": "Document",
@@ -92,8 +97,7 @@
               "RelativeToolTip": "..\\LIB\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T13:27:47.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T13:27:47.311Z"
             },
             {
               "$type": "Document",
@@ -105,42 +109,32 @@
               "RelativeToolTip": "..\\LIB\\DTOs\\CreateUserRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T13:27:09.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T13:27:09.134Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserManager.cs",
               "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
               "RelativeDocumentMoniker": "..\\LIB\\Managers\\UserManager.cs",
               "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\UserManager.cs",
               "RelativeToolTip": "..\\LIB\\Managers\\UserManager.cs",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAiwKEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIIAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T13:26:35.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T13:26:35.706Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "CriminalsController.cs",
               "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\API\\Controllers\\CriminalsController.cs",
               "RelativeDocumentMoniker": "Controllers\\CriminalsController.cs",
               "ToolTip": "C:\\Users\\acruz\\Proyectos\\Spiderman\\API\\Controllers\\CriminalsController.cs",
               "RelativeToolTip": "Controllers\\CriminalsController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T12:20:43.269Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
@@ -152,8 +146,7 @@
               "RelativeToolTip": "..\\LIB\\Models\\Criminal.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T12:20:15.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-18T12:20:15.208Z"
             }
           ]
         }
@@ -178,7 +171,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IManager.cs",
               "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Interfaces\\IManager.cs",
               "RelativeDocumentMoniker": "..\\LIB\\Interfaces\\IManager.cs",
@@ -197,7 +190,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CriminalManager.cs",
               "DocumentMoniker": "C:\\Users\\acruz\\Proyectos\\Spiderman\\LIB\\Managers\\CriminalManager.cs",
               "RelativeDocumentMoniker": "..\\LIB\\Managers\\CriminalManager.cs",

@@ -1,11 +1,12 @@
-﻿using LIB.Enums;
+﻿using LIB.DTOs;
+using LIB.Enums;
 using LIB.Interfaces;
 using LIB.Models;
 using LIB.ViewModels;
 using Microsoft.EntityFrameworkCore;
 namespace LIB.Managers
 {
-    public class AddressManager: IManager<AddressViewModel>
+    public class AddressManager: IManager<AddressViewModel, CreateAddressRequest, Address>
     {
         private readonly SpidermanContext _context;
         public AddressManager(SpidermanContext context)
@@ -47,65 +48,63 @@ namespace LIB.Managers
             return viewModels;
         }
 
-        public async Task<int> Create(AddressViewModel viewModel)
+        public async Task Create(CreateAddressRequest dto)
         {
-            int existingAddressId = 0;
-            Address? model = null;
-
             try
             {
-                if(viewModel == null) throw new Exception("La dirección no es válida");
-                existingAddressId = await Exists(viewModel);
-                if (existingAddressId == 0)
-                {
-                    model = new Address(viewModel);
-                    await _context.Addresses.AddAsync(model);
-                    int rowsAffected = await _context.SaveChangesAsync();
-                    if (rowsAffected != 1) throw new Exception("No se ha podido crear la direccion");
-                }
+                if(dto == null) throw new Exception("La dirección no es válida");
+
+                AddressViewModel viewModel = new AddressViewModel(dto);
+                if(viewModel == null) throw new Exception("El modelo vista de la dirección no es válido");
+
+                Address model = new Address(viewModel);
+                if (model == null) throw new Exception("El modelo de la dirección no es válido");
+
+                await _context.Addresses.AddAsync(model);
+                int rowsAffected = await _context.SaveChangesAsync();
+                if (rowsAffected != 1) throw new Exception("No se ha podido crear la direccion");
+                
             }
             catch (Exception) 
             {
                 throw;            
             }
-            return model!.AddressId;
         }
 
-        public async Task<int> Delete(int id)
+        public async Task Delete(int id)
         {
-            int rowsAffected = 0;
             try
             {
                 Address? model = await GetModel(id);
                 if (model == null) throw new Exception("La direccion no existe");
+
                 _context.Addresses.Remove(model);
-                rowsAffected = await _context.SaveChangesAsync();
+                int rowsAffected = await _context.SaveChangesAsync();
+
+                if (rowsAffected != 1) throw new Exception("No se ha podido eliminar la direccion");
             }
             catch (Exception)
             {
                 throw;
             }
-            return rowsAffected;
         }
-        public async Task<int> Exists(AddressViewModel viewModel)
+        public async Task<Address?> Exists(AddressViewModel viewModel)
         {
-            Address? model = null;
             try
             {
-                if (viewModel == null) return 0;
-                model = await _context.Addresses
+                if (viewModel == null) throw new Exception("El modelo vista de la dirección no es válido");
+
+                 return await _context.Addresses
                     .FirstOrDefaultAsync(m => m.Street.Equals(viewModel.Street, StringComparison.CurrentCultureIgnoreCase) &&
                     m.ZipCode.Equals(viewModel.ZipCode, StringComparison.CurrentCultureIgnoreCase) &&
                     m.Side.Equals(viewModel.Side.ToString(), StringComparison.CurrentCultureIgnoreCase) &&
                     m.Number == viewModel.Number
                     );
-                if(model == null) return 0;
             }
             catch (Exception)
             {
                 throw;
             }
-            return model.AddressId;
         }
         private async Task<Address?> GetModel(int id)
         {

@@ -61,7 +61,7 @@ namespace LIB.Managers
                 CriminalViewModel viewModel = new CriminalViewModel(dto, riskLevel);
                 if(await Exists(viewModel) == null) throw new Exception("El criminal ya existe");
 
-                Criminal? model = await CreateModel(viewModel, riskLevel);
+                Criminal? model = new Criminal(viewModel, riskLevel);
 
                 if(model == null) throw new Exception("No se pudo crear el criminal");
 
@@ -128,25 +128,6 @@ namespace LIB.Managers
             {
                 throw;
             }
-        }
-
-        private async Task<Criminal> CreateModel(CriminalViewModel viewModel, CriminalRiskLevel risk) {
-            Criminal? criminal = null;
-            try {
-                if (viewModel == null) throw new Exception("El modelo de vista del criminal es nulo");
-                if(risk == null) throw new Exception("El nivel de riesgo del criminal es nulo");
-
-                criminal = new Criminal {
-                    Name = viewModel.Name,
-                    Description = viewModel.Description,
-                    RiskId = risk.CriminalRiskLevelId,
-                    Image = viewModel.Image,
-                    CriminalSince = viewModel.Since,
-                };
-            } catch (Exception) {
-                throw;
-            }
-            return criminal;
         }
 
         private async Task<Criminal?> GetModel(int id) {
